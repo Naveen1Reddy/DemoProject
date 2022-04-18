@@ -1,6 +1,6 @@
 
 # using all function 
-print(all(i == i -1 for i in range(1,10)))
+print(all(i == i for i in range(1,10)))
 
 
 # Operator overloading
