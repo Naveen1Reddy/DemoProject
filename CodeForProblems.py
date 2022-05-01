@@ -338,5 +338,35 @@ Final_binary_Val = bintodec(binarystring)
 print(current_binaryValue,Final_binary_Val)
 
 
-# All Possible  Substrings of  a Given string
+"""
+Ninja Control 
+
+Given a 8*8 matrix where each block is a house so total 64 houses
+Ninjas land on a particular block and can take control over all blocks -
+  horizontal and Vertical to that Position .
+  
+When given a list of Positions find The total Blocks occupied by the Ninjas
+ Ex : l1 = [[5, 5], [5, 3]]
+"""
+
+# CareFul With Matrix Creation using - [[0]*8]*8 this is Not Giving Correct Ans
+
+mat = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+l1 = [[5, 5], [3, 3]]
+count = 0
+for i in l1:
+    x, y = i[0], i[1]
+    if mat[x][0] == 0:
+        for j in range(8):
+            if mat[x][j] == 0:
+                count += 1
+                mat[x][j] = 1
+
+    if mat[0][y] == 0:
+        for j in range(8):
+            if mat[j][y] == 0:
+                count += 1
+                mat[j][y] = 1
+
+print(count)
 
