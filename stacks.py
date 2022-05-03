@@ -12,3 +12,12 @@ Maximum rectangluar Area in a Binary Matrix with 1's or 0's
 Infix ,Prefix, Postfix
 
 """
+# stack From Linked List
+
+class stack:
+    pass
+
+# Stack Using two Queues 
+
+class stac:
+    pass
