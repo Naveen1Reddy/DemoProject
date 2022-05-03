@@ -51,3 +51,40 @@ class Qu:
 
 # queue Using Two Stacks 
 
+from collections import deque
+
+
+class Que:
+    def __init__(self) -> None:
+        self.s1 = deque()
+        self.s2 = deque()
+
+    def add_ele(self,x):
+        self.s1.append(x)
+
+    def pop_ele(self):
+        if len(self.s1) < 1:
+            return "Empty"
+        else:
+            while len(self.s1) > 0 :
+                self.s2.append(self.s1.pop())
+
+            ans = self.s2.pop()
+            while len(self.s2) > 0:
+                self.s1.append(self.s2.pop())
+            
+            return ans
+
+        
+
+    def peek_ele(self):
+        if len(self.s1) < 1:
+            return "Empty"
+        else:
+            while len(self.s1) > 0 :
+                self.s2.append(self.s1.pop())
+
+            ans = self.s2[-1]
+            while len(self.s2) > 0:
+                self.s1.append(self.s2.pop())
+            return ans
