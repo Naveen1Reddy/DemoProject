@@ -21,5 +21,19 @@ class stack:
 
 # Stack Using two Queues 
 
+from collections import deque
+
+
 class stac:
-    pass
+    def __init__(self) -> None:
+        self.q1 = deque()
+        self.q2 = deque()
+    
+    def insert_ele(self,x):
+        pass
+
+    def pop_ele(self):
+        pass
+
+    def peek_ele(self):
+        pass
