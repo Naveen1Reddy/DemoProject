@@ -1,6 +1,5 @@
 # Binary Tree
 
-from importlib_metadata import posixpath
 
 
 class Node:
