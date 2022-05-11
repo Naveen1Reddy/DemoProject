@@ -72,3 +72,26 @@ def postorder(root):
         postorder(root.left)
         postorder(root.right)
         print(root.data)
+
+# Left View of A Binary Tree
+
+
+
+
+# Right View Of A  Binary Tree
+
+
+
+
+
+# Top View Of A Binary Tree 
+
+
+
+
+# Bottom View Of A Binary Tree
+
+
+
+
+# Flatten A Binary Tree into A Doubly Linked List
