@@ -370,3 +370,19 @@ for i in l1:
 
 print(count)
 
+# Buy and Sell Stocks 3 - LeetCode . 123
+
+def buysell(prices):
+    min_price1 = min_price2 = 9999999999
+    profit1 = profit2 = 0
+
+    for i in range(len(prices)):
+        min_price1 = min(prices[i], min_price1)
+        profit1 = max(profit1,prices[i] - min_price1)
+
+        min_price2 = min(min_price2 , prices[i] - profit1)
+        profit2 = max(profit2,prices[i] - min_price2)
+    
+    return profit2
+
+
