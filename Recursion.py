@@ -40,6 +40,8 @@ def subsets(arr , i ,out , sub):
         ans = tuple(sub)
         if ans not in out:
             out.add(ans)
+        
+        return
     
     sub.append(arr[i])
     subsets(arr,i+1,out,sub)
