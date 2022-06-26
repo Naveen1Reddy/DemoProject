@@ -13,7 +13,7 @@ arr = [1,2,3,4,5]
 ans = []
 subset = []
 powerset(arr,0,ans,subset)
-print(ans)
+# print(ans)
 
 
 def powset(arr ,i):
@@ -30,3 +30,29 @@ def powset(arr ,i):
     return ans
 
 powset([1,2,3],0)
+
+
+# Unique Subsets of Array which has Duplicate Elements
+
+def subsets(arr , i ,out , sub):
+
+    if i >= len(arr):
+        ans = tuple(sub)
+        if ans not in out:
+            out.add(ans)
+    
+    sub.append(arr[i])
+    subsets(arr,i+1,out,sub)
+
+    sub.pop()
+    subsets(arr, i+1 ,out,sub)
+
+
+arr = [1,2,3,1]
+out = set()
+sub = []
+subsets(arr,0,out,sub)
+
+print(out)
+
+     
