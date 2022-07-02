@@ -55,6 +55,8 @@ out = set()
 sub = []
 subsets(arr,0,out,sub)
 
-print(out)
+# Not A good Apporach , Try using incrementing 'i ' unit we find next ele and i < len(arr)
 
-     
+# print(out)
+
+
