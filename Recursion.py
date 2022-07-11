@@ -60,4 +60,68 @@ subsets(arr,0,out,sub)
 # print(out)
 
 
+"""
+N Queen Problem
+"""
+def issafe(row,col,board):
+
+    # check from curr to up
+    i = row
+    while (i >= 0):
+        if board[i][col] == 1:
+            return False
+        i -= 1
+
+    # check from curr to topLeft
+    i = row
+    j = col
+    while (i >= 0) and (j >= 0):
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j -= 1
+
+    i = row
+    j = col
+    while (i >= 0) and (j < n):
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j += 1
+
+    return True
+
+def queen(row ,n ,ans ,board):
+    if row == n:
+        temp = [0]*n
+        for x in range(n):
+            for y in range(n):
+                if board[x][y] == 1:
+                    temp[y] = x+1
+
+        ans.append(temp)
+        return
+    
+    for i in range(n):
+
+        if issafe(row,i,board):
+            board[row][i] = 1
+            queen(row+1 ,n, ans, board)
+
+            board[row][i] = 0
+
+
+
+n = 4
+board = []
+for i in range(n):
+    board.append(list([0]*5))
+
+
+row = 0
+ans = []
+
+queen(row ,n ,ans,board)
+
+print(ans)
 
