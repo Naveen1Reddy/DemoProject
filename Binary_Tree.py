@@ -48,22 +48,24 @@ def max_val(root):
     return max(root.data,   max(  max_val(root.left),  max_val(root.right)  )   )
 
 # Binary Tree Traversals 
-# 1 - Level Order Traversal
-
-def levelorder(root):
-    if root:
-        levelorder(root.left)
-        print(root.Data)
-        levelorder(root.right)
-
-
-# 2 - Pre Order Traversal
+# 1 - Pre Order Traversal
 
 def preorder(root):
     if root:
-        print(root.data)
+        print(root.Data)
+
         preorder(root.left)
+        
         preorder(root.right)
+
+
+# 2 - in Order Traversal
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
 
 # 3 - Post Order Traversal
 
@@ -72,6 +74,28 @@ def postorder(root):
         postorder(root.left)
         postorder(root.right)
         print(root.data)
+    
+# 4 - Level Order Traversal
+
+def LevelOrder(root):
+    if root == None:
+        return None
+    
+    queue = []
+    queue.append(root)
+
+    while len(queue) > 0:
+        temp = queue.pop(0)
+        print(temp.data)
+
+        if temp.left != None:
+            queue.append(temp.left)
+        if temp.right != None:
+            queue.append(temp.right)
+    
+ 
+
+
 
 # Left View of A Binary Tree
 
